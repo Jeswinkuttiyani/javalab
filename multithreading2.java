@@ -40,6 +40,7 @@ class NumberGenerator extends Thread{
 		this.numberManger=numberManger;
 	    }
 	public void run() {
+		while(true) {
 		numberManger.generateNumber();
 		try {
 			Thread.sleep(1000);
@@ -49,13 +50,14 @@ class NumberGenerator extends Thread{
 		}
 	}
 }
-
+}
 class EvenPrinterThread extends Thread{
 	NumberManger numberManger;
 	public EvenPrinterThread(NumberManger numberManger) {
 		this.numberManger=numberManger;
     }
 	public void run() {
+		while(true) {
 			try {
 				numberManger.printEvenNumber();
 			}
@@ -64,13 +66,16 @@ class EvenPrinterThread extends Thread{
 			}
 	}
 }
+}
 class OddPrinterThread extends Thread{
 	NumberManger numberManger;
 	public OddPrinterThread(NumberManger numberManger) {
 		this.numberManger=numberManger;
     }
 	public void run() {
+		while(true) {
 			try {
+		
 				numberManger.printOddNumber();
 			}
 			catch(InterruptedException e) {
@@ -78,3 +83,5 @@ class OddPrinterThread extends Thread{
 			}
 	}
 }
+}
+
