@@ -1,6 +1,6 @@
-package oopj;
+package java2;
 import java.util.Scanner;
-public class Threadmulti {
+public class ThreadMultiplication{
 	public static void main(String[] args) {
 		Scanner sc =new Scanner(System.in);
 		System.out.print("Enter the number that you want run in thread1: ");
@@ -12,19 +12,19 @@ public class Threadmulti {
 		Multitable m=new Multitable();
 		Mythread1 a=new Mythread1(m,number1);
 		Mythread2 b=new Mythread2(m,number2);
-		Mythread2 c=new Mythread2(m,number3);
+		Mythread3 c=new Mythread3(m,number3);
 		a.start();
-		b.start();
 		c.start();
+		b.start();
 	}
-} 
+  } 
 class Multitable{
 	synchronized void printmultiplicationTable(int number) {
 			for(int i=1;i<=10;i++) { 
 				System.out.println(number+"X"+i+"="+i*number);
 		}
 	}
-}
+  }
 class Mythread1 extends Thread{
 	Multitable a;
 	int number1;
@@ -35,8 +35,8 @@ class Mythread1 extends Thread{
 	 public void run() {
 		 a.printmultiplicationTable(number1);
 	 }
-	
-}
+  }
+
 class Mythread2 extends Thread{
 	Multitable b;
 	int number2;
@@ -47,7 +47,8 @@ class Mythread2 extends Thread{
 	public void run() {
 		b.printmultiplicationTable(number2);
 	}
-}
+  }
+
 class Mythread3 extends Thread{
 	Multitable c;
 	int number3;
@@ -58,4 +59,4 @@ class Mythread3 extends Thread{
 	public void run() {
 		c.printmultiplicationTable(number3);
 	}
-}
+  }
