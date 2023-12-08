@@ -20,6 +20,7 @@ public class ThreadMultiplication{
   } 
 class Multitable{
 	synchronized void printmultiplicationTable(int number) {
+		System.out.println("multiplication table of "+number);
 			for(int i=1;i<=10;i++) { 
 				System.out.println(number+"X"+i+"="+i*number);
 		}
